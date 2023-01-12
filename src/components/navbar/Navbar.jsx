@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"; //Initialize state at the top of the function component
+import "./navbar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -28,7 +29,6 @@ const NavBar = () => {
     setActiveLink(value);
   };
   return (
-    <>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
@@ -88,7 +88,6 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </>
   );
 };
 
