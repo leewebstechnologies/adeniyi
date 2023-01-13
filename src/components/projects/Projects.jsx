@@ -1,10 +1,15 @@
-import { Col, Container, Row, Tab } from "react-bootstrap";
 import "./projects.css";
+import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
+import ProjectCard from "../projectcard/ProjectCard";
+import colorSharp2 from "../../assets/img/color-sharp.png";
+import projImg1 from "../../assets/img/3.png";
+import projImg2 from "../../assets/img/project-img2.png";
+import projImg3 from "../../assets/img/project-img3.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Website",
+      title: "Tesla-Clone",
       description: "Web Developmet",
       imgUrl: projImg1,
     },
@@ -47,7 +52,11 @@ const Projects = () => {
               temporibus accusamus eius.
             </p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav variant="pills" defaultActiveKey="/home">
+              <Nav
+                variant="pills"
+                className="nav-pills mb-5 justify-content-center align-items-center"
+                id="pills-tab"
+              >
                 <Nav.Item>
                   <Nav.Link eventKey="first">Tab One</Nav.Link>
                 </Nav.Item>
@@ -60,15 +69,20 @@ const Projects = () => {
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                    <Row>
-                        
-                    </Row>
+                  <Row>
+                    {projects.map((project, index) => {
+                      return <ProjectCard key={index} {...project} />;
+                    })}
+                  </Row>
                 </Tab.Pane>
+                <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
+                <Tab.Pane eventKey="third">Lorem Ipsum</Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
         </Row>
       </Container>
+      <img className="background-img-right" src={colorSharp2} alt="" />
     </section>
   );
 };
