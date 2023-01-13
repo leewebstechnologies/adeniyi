@@ -51,7 +51,7 @@ const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to my Portfolio</span>
             <h1>
-              {`Hello, I 'm a`}
+              {`Hello, I 'm Ali. I 'm a`}
               <span className="wrap"> {text}</span>
             </h1>
             <p>
