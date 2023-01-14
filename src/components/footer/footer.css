@@ -75,3 +75,28 @@
     letter-spacing: 0.5px;
     margin-top: 20px;
   }
+
+  .a {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .social-icon {
+    margin-top: 50px;
+  }
+
+  p {
+    margin-top: 50px;
+  }
+  .social-icon b {
+    margin-right: 100px !;
+  }
+
+  .a p {
+    margin-top: 60px;
+  }
+
+  .logo {
+    margin-top: 50px;
+  }

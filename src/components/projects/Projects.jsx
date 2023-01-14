@@ -117,6 +117,7 @@ const Projects = () => {
         </Row>
       </Container>
       <img className="background-image-right" src={colorSharp2}></img>
+      <h1>Tinder Clone</h1>
     </section>
   );
 };
