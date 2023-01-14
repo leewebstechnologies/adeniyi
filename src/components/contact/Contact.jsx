@@ -109,7 +109,7 @@ export const Contact = () => {
                         <input
                           type="tel"
                           value={formDetails.phone}
-                          placeholder="Phone No."
+                          placeholder="Phone Number"
                           onChange={(e) =>
                             onFormUpdate("phone", e.target.value)
                           }
