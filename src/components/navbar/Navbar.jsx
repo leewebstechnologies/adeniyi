@@ -7,6 +7,7 @@ import logo from "../../assets/img/logo.svg";
 import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.svg";
 import navIcon3 from "../../assets/img/github_white.png";
+import navIcon4 from "../../assets/img/nav-icon4.png";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const NavBar = () => {
@@ -71,18 +72,22 @@ const NavBar = () => {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
-                <img src={navIcon1} alt="" />
+                <img src={navIcon1} alt="linkedin" />
               </a>
               <a href="#">
-                <img src={navIcon2} alt="" />
+                <img src={navIcon2} alt="facebook" />
               </a>
               <a href="#">
-                <img src={navIcon3} alt="" />
+                <img src={navIcon3} alt="github" />
+              </a>
+              <a
+                href="https://wa.me/+2348084838268"
+                target="_link"
+                rel="no referrer"
+              >
+                <img src={navIcon4} alt="whatsapp icon" />
               </a>
             </div>
-            <button className="vvd" onClick={() => console.log("connect")}>
-              <span>Let's Connect</span>
-            </button>
           </span>
         </Navbar.Collapse>
       </Container>
