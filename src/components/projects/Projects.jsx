@@ -42,9 +42,8 @@ const Projects = () => {
     },
   ];
 
-  
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col size={12}>
@@ -91,18 +90,22 @@ const Projects = () => {
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                      <Row>
-                          {projects.map((projecttwo, index) => {
-                            return <ProjectCard key={index} {...projecttwo} />;
-                          })}
-                        </Row>
+                        <p>
+                          Second dolor sit amet consectetur adipisicing elit.
+                          Cumque quam, quod neque provident velit, rem explicabo
+                          excepturi id illo molestiae blanditiis, eligendi dicta
+                          officiis asperiores delectus quasi inventore debitis
+                          quo.
+                        </p>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                      <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
+                        <p>
+                          third ipsum dolor sit amet consectetur adipisicing
+                          elit. Cumque quam, quod neque provident velit, rem
+                          explicabo excepturi id illo molestiae blanditiis,
+                          eligendi dicta officiis asperiores delectus quasi
+                          inventore debitis quo.
+                        </p>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
@@ -112,7 +115,11 @@ const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="background" />
+      <img
+        className="background-image-right"
+        src={colorSharp2}
+        alt="background"
+      />
       <h1>Tinder Clone</h1>
     </section>
   );

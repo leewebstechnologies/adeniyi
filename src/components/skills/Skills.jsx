@@ -45,15 +45,15 @@ const Skills = () => {
                 className="skill-slider"
               >
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} alt="Web Development" />
                   <h5>Web Development</h5>
                 </div>
                 <div className="item">
-                  <img src={meter2} alt="Image" />
+                  <img src={meter2} alt="Web Development" />
                   <h5>UI/UX Design</h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} alt="Image" />
+                  <img src={meter3} alt="Web Development" />
                   <h5>Graphic Design</h5>
                 </div>
               </Carousel>
@@ -61,7 +61,11 @@ const Skills = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-left" src={colorSharp} alt="background-image" />
+      <img
+        className="background-image-left"
+        src={colorSharp}
+        alt="background-image"
+      />
     </section>
   );
 };

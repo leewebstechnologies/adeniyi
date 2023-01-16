@@ -85,9 +85,9 @@ const Contact = () => {
                       </Col>
                       <Col size={12} sm={6} className="px-1">
                         <input
-                          type="text"
-                          placeholder="Username"
-                          name="user_username"
+                          type="tel"
+                          placeholder="Phone Number"
+                          name="user_phone"
                           required
                         />
                       </Col>

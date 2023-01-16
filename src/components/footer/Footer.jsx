@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import logo from "../../assets/img/logo.svg";
+import logo from "../../assets/img/leewebs_logo.png";
 import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.svg";
 import navIcon3 from "../../assets/img/github_white.png";
@@ -17,21 +17,21 @@ const Footer = () => {
           </Col>
           <Col size={12} sm={6} className="a">
             <div className="social-icon">
-              <a href="#">
-                <img className="b" src={navIcon1} alt="Icon" />
-              </a>
-              <a href="#">
-                <img src={navIcon2} alt="Icon" />
-              </a>
-              <a href="#"> 
-                <img src={navIcon3} alt="Icon" />
+            <a href="https://github.com/leewebstechnologies">
+                <img src={navIcon3} alt="github" />
               </a>
               <a
                 href="https://wa.me/+2348084838268"
                 target="_link"
                 rel="no referrer"
               >
-                <img src={navIcon4} alt="" />
+                <img src={navIcon4} alt="whatsapp icon" />
+              </a>
+              <a href="https://www.linkedin.com/in/aliu-ajibade-a43210139">
+                <img src={navIcon1} alt="linkedin" />
+              </a>
+              <a href="https://web.facebook.com/ali.ajibade.946">
+                <img src={navIcon2} alt="facebook" />
               </a>
             </div>
             <p>Copyright © 2023 - Leewebs</p>
