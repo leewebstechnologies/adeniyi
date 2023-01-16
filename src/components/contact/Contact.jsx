@@ -1,50 +1,34 @@
-import { useState } from "react";
+import "./contact.css";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import "./contact.css";
 
-export const Contact = () => {
-  const formInitialDetails = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  };
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+const Contact = () => {
+  const formRef = useRef();
+  const [done, setDone] = useState(false);
 
-  const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
-      [category]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
-    } else {
-      setStatus({
-        succes: false,
-        message: "Something went wrong, please try again later.",
-      });
-    }
+    setDone(true);
+
+    emailjs
+      .sendForm(
+        "service_2bwa8bq",
+        "template_nx6tqat",
+        formRef.current,
+        "D7s2QtY9npU46KDNG"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -73,72 +57,53 @@ export const Contact = () => {
                   }
                 >
                   <h2>Get In Touch</h2>
-                  <form onSubmit={handleSubmit}>
+                  <form ref={formRef} onSubmit={handleSubmit}>
                     <Row>
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
-                          value={formDetails.firstName}
-                          placeholder="First Name"
-                          onChange={(e) =>
-                            onFormUpdate("firstName", e.target.value)
-                          }
+                          placeholder="Name"
+                          name="user_name"
+                          required
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
-                          value={formDetails.lasttName}
-                          placeholder="Last Name"
-                          onChange={(e) =>
-                            onFormUpdate("lastName", e.target.value)
-                          }
+                          placeholder="Subject"
+                          name="user_subject"
+                          required
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="email"
-                          value={formDetails.email}
                           placeholder="Email Address"
-                          onChange={(e) =>
-                            onFormUpdate("email", e.target.value)
-                          }
+                          name="user_email"
+                          required
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
                         <input
-                          type="tel"
-                          value={formDetails.phone}
-                          placeholder="Phone Number"
-                          onChange={(e) =>
-                            onFormUpdate("phone", e.target.value)
-                          }
+                          type="text"
+                          placeholder="Username"
+                          name="user_username"
+                          required
                         />
                       </Col>
+
                       <Col size={12} className="px-1">
                         <textarea
                           rows="6"
-                          value={formDetails.message}
                           placeholder="Message"
-                          onChange={(e) =>
-                            onFormUpdate("message", e.target.value)
-                          }
+                          name="message"
+                          required
                         ></textarea>
                         <button type="submit">
-                          <span>{buttonText}</span>
+                          <span>Submit</span>
                         </button>
+                        <h1>{done && "Thank you..."}</h1>
                       </Col>
-                      {status.message && (
-                        <Col>
-                          <p
-                            className={
-                              status.success === false ? "danger" : "success"
-                            }
-                          >
-                            {status.message}
-                          </p>
-                        </Col>
-                      )}
                     </Row>
                   </form>
                 </div>
@@ -150,3 +115,5 @@ export const Contact = () => {
     </section>
   );
 };
+
+export default Contact;
