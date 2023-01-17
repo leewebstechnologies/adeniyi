@@ -2,43 +2,89 @@ import "./projects.css";
 import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
 import ProjectCard from "../projectcard/ProjectCard";
 import colorSharp2 from "../../assets/img/color-sharp.png";
-import projImg1 from "../../assets/img/3.png";
-import projImg2 from "../../assets/img/project-img2.png";
-import projImg3 from "../../assets/img/project-img3.png";
+import projImg1 from "../../assets/img/project-img1.png";
+import projImg2 from "../../assets/img/project-img2.jpg";
+import projImg3 from "../../assets/img/project-img3.jpg";
+import projImg4 from "../../assets/img/project-img4.jpg";
+import projImg5 from "../../assets/img/project-img5.jpg";
+import projImg6 from "../../assets/img/project-img6.jpg";
+import projImg7 from "../../assets/img/project-img7.jpg";
+import projImg8 from "../../assets/img/project-img8.png";
+import projImg9 from "../../assets/img/project-img9.png";
+import projImg10 from "../../assets/img/project-img10.jpg";
+import projImg11 from "../../assets/img/project-img11.png";
+import projImg12 from "../../assets/img/project-img12.png";
+// import projImg13 from "../../assets/img/project-img13.jpg";
 import TrackVisibility from "react-on-screen";
 import "animate.css";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Tesla-Clone",
-      description: "Web Developmet",
+      title: "SmartBuy",
+      description: "Graphic Design",
       imgUrl: projImg1,
     },
     {
-      title: "CubeVest",
+      title: "FoodMania",
       description: "UI/UX Design",
       imgUrl: projImg2,
     },
     {
-      title: "SmartBuy",
+      title: "Origami",
       description: "Graphic Design",
       imgUrl: projImg3,
     },
+  ];
+
+  const projects_two = [
     {
-      title: "Website",
-      description: "Web Developmet",
-      imgUrl: projImg1,
+      title: "Manbaul ilm",
+      description: "Graphic Design",
+      imgUrl: projImg4,
+    },
+    {
+      title: "Kademofs",
+      description: "Graphic Design",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Manbaul ilm",
+      description: "Graphic Design",
+      imgUrl: projImg6,
+    },
+    {
+      title: "Leewebs",
+      description: "Graphic Design",
+      imgUrl: projImg7,
+    },
+  ];
+
+  const projects_three = [
+    {
+      title: "SmartBuy",
+      description: "Graphic Design",
+      imgUrl: projImg8,
+    },
+    {
+      title: "SmartBuy",
+      description: "Graphic Design",
+      imgUrl: projImg9,
+    },
+    {
+      title: "Gorgonia",
+      description: "Graphic Design",
+      imgUrl: projImg10,
     },
     {
       title: "CubeVest",
       description: "UI/UX Design",
-      imgUrl: projImg2,
+      imgUrl: projImg11,
     },
     {
-      title: "SmartBuy",
-      description: "Graphic Design",
-      imgUrl: projImg3,
+      title: "CubeVest",
+      description: "UI/UX Design",
+      imgUrl: projImg12,
     },
   ];
 
@@ -56,9 +102,9 @@ const Projects = () => {
                 >
                   <h2>Projects</h2>
                   <p>
-                    I design and develop services for customers of all sizes,
-                    specialising in creating stylish, modern websites, graphic
-                    designs and online stores.
+                    I render services for customers of all sizes, specialising
+                    in creating stylish, modern websites, graphic designs and
+                    online stores.
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
@@ -90,24 +136,43 @@ const Projects = () => {
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <p>
-                          Second dolor sit amet consectetur adipisicing elit.
-                          Cumque quam, quod neque provident velit, rem explicabo
-                          excepturi id illo molestiae blanditiis, eligendi dicta
-                          officiis asperiores delectus quasi inventore debitis
-                          quo.
-                        </p>
+                        <Row>
+                          {projects_two.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <p>
-                          third ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
+                        <Row>
+                          {projects_three.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                     </Tab.Content>
+                    <h4>
+                      <a
+                        className="web"
+                        href="https://tesla-clone-leewebs.netlify.app"
+                      >
+                        Tesla UI
+                      </a>
+                      <a className="web" href="https://lukend.netlify.app">
+                        Lukend
+                      </a>
+                      <a
+                        className="web"
+                        href="https://facebook-clone-ui.netlify.app"
+                      >
+                        FaceBook UI
+                      </a>
+                      <a
+                        className="web"
+                        href="https://leewebs.netlify.app"
+                      >
+                        Leewebs
+                      </a>
+                    </h4>
                   </Tab.Container>
                 </div>
               )}
@@ -120,7 +185,6 @@ const Projects = () => {
         src={colorSharp2}
         alt="background"
       />
-      <h1>Tinder Clone</h1>
     </section>
   );
 };
