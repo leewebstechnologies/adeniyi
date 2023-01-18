@@ -5,7 +5,7 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../../assets/img/header-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import { isVisible } from "@testing-library/user-event/dist/utils/misc/isVisible";
+// import { isVisible } from "@testing-library/user-event/dist/utils/misc/isVisible";
 
 const Banner = () => {
   const [loopNumber, setLoopNumber] = useState(0);
@@ -13,6 +13,7 @@ const Banner = () => {
   const toRotate = ["Front-End Developer", "Graphic Designer"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [index, setIndex] = useState(1);
   const period = 2000;
 
   useEffect(() => {
@@ -44,7 +45,10 @@ const Banner = () => {
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNumber(loopNumber + 1);
+      setIndex(1);
       setDelta(500);
+    } else {
+      setIndex((prevIndex) => prevIndex + 1);
     }
   };
   return (
@@ -53,7 +57,7 @@ const Banner = () => {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-              {({isVisible}) => (
+              {({ isVisible }) => (
                 <div
                   className={
                     isVisible ? "animate__animated animate__fadeIn" : ""
@@ -86,7 +90,7 @@ const Banner = () => {
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alt="Header Img" />
+            <img src={headerImg} alt="Header" />
           </Col>
         </Row>
       </Container>

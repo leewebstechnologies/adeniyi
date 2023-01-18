@@ -20,20 +20,22 @@ import "animate.css";
 
 const Projects = () => {
   const projects = [
-    {
-      title: "SmartBuy",
-      description: "Graphic Design",
-      imgUrl: projImg1,
-    },
+   
     {
       title: "FoodMania",
       description: "UI/UX Design",
       imgUrl: projImg2,
     },
+   
     {
-      title: "Origami",
+      title: "STK",
       description: "Graphic Design",
       imgUrl: projImg3,
+    },
+    {
+      title: "SmartBuy",
+      description: "Graphic Design",
+      imgUrl: projImg1,
     },
   ];
 
@@ -103,8 +105,7 @@ const Projects = () => {
                   <h2>Projects</h2>
                   <p>
                     I render services for customers of all sizes, specialising
-                    in creating stylish, modern websites, graphic designs and
-                    online stores.
+                    in creating stylish, modern websites and graphic designs.
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
